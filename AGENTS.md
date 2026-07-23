@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md working agreement
-version: 2.1.0
+version: 2.2.0
 source: https://github.com/andy-emerson/working-agreement
 copyright: © 2026 Andrew Emerson
 license: CC-BY-4.0
@@ -43,6 +43,11 @@ between. The process runs at two scales:
 
 Human ↔ Agent alignment happens at every commit; code ↔ documentation
 alignment happens at every merge.
+
+Exploration is free: a spike on a throwaway branch needs no plan and
+no review. The process governs what is meant to land, and begins when
+that intent forms — work salvaged from a spike enters it like any
+other change.
 
 ## Claims
 
