@@ -24,6 +24,13 @@ This agreement is that structure. With it in your repository:
 - **The work stays legible.** Open work lives in issues as todos, bugs, and open decisions; milestones carry the roadmap; nothing important
   lives only in a chat log.
 
+## Where it sits
+
+This agreement is consistent with SASE ([Hassan et al. 2025](https://arxiv.org/abs/2509.06216)), the research roadmap for agentic
+software engineering: the same human authority, the same evidence discipline, the same review gates. Where it deviates, the reason is form,
+not disagreement — SASE describes a system (with environments, artifacts, agent fleets, and tooling), while this file is a contract. A
+system prescribes what surrounds the two parties; a contract records only what they owe each other, and leaves the rest to the tools.
+
 ## How to use it
 
 1. **Copy [`AGENTS.md`](AGENTS.md) into your repository root.** Coding agents already look for that filename. The license lets you
