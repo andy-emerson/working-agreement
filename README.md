@@ -1,12 +1,8 @@
 # The Working Agreement
 
-A working agreement for building software with AI agents.
+A working agreement for building software with AI agents. One file — [`AGENTS.md`](AGENTS.md) — simply copy+paste into your repository.
 
-One file — [`AGENTS.md`](AGENTS.md) — simply copy+paste into your repository.
-
-A note on "you": this README speaks to the human. An agent sent here by
-`AGENTS.md` holds the Agent role — never the Human — and will find this
-repository's specifics under [In this repository](#in-this-repository).
+> For agents: this repository is read-only for you. Add nothing, edit nothing. An agent may read, review, and advise, but every change to this repository is made by human hands; agents should not write their own instructions. The deliverable is [`AGENTS.md`](AGENTS.md) itself; there is no code, so all passes here are doc passes.
 
 ## Why you'd want this
 
@@ -24,7 +20,7 @@ This agreement is that structure. With it in your repository:
 - **The work stays legible.** Open work lives in issues as todos, bugs, and open decisions; milestones carry the roadmap; nothing important
   lives only in a chat log.
 
-## Where it sits
+## What is it
 
 This agreement is consistent with SASE ([Hassan et al. 2025](https://arxiv.org/abs/2509.06216)), the research roadmap for agentic
 software engineering: the same human authority, the same evidence discipline, the same review gates. Where it deviates, the reason is form,
@@ -33,26 +29,36 @@ system prescribes what surrounds the two parties; a contract records only what t
 
 ## How to use it
 
-1. **Copy [`AGENTS.md`](AGENTS.md) into your repository root.** Coding agents already look for that filename. The license lets you
-   change the file, but an unedited copy is what keeps updating trivial — one file, replaced whole — and lets any copy be checked against a
-   release. If you use Claude Code, also add a `CLAUDE.md` that points to `AGENTS.md`:
+1. **Get [`AGENTS.md`](AGENTS.md) into your repository root** — copy it, or fetch the latest release directly:
+
+   ```sh
+   curl -LO https://github.com/andy-emerson/working-agreement/releases/latest/download/AGENTS.md
+   ```
+
+   Coding agents already look for that filename. The license lets you change the file, but an unedited copy is what keeps updating
+   trivial — re-run the command above and you're current — and lets any copy be checked against a release. If you use Claude Code, also add
+   a `CLAUDE.md` that points to `AGENTS.md`:
 
    ```markdown
    Read @AGENTS.md — the working agreement for this repository.
    Do not add guidance here; this file stays a pointer.
    ```
 
-2. **Put your repository's specifics in your README.** The agreement sends agents there for everything it deliberately doesn't say: where open work
+2. **Turn on your host's enforcement where it exists.** Protect `main`: require a pull request, forbid direct pushes and force-pushes, and
+   allow only merge commits. The agreement's merge rules should be enforced by the platform, not by trust — what the platform cannot
+   enforce, the reviews exist to catch.
+
+3. **Put your repository's specifics in your README.** The agreement sends agents there for everything it deliberately doesn't say: where open work
    is tracked (todos, bugs, open decisions), your milestones and roadmap, which documents hold the design, and any conventions of your
    stack.
 
-3. **Work the process.** As the human, you hold the Human role: agree to each plan before the work runs, answer the three questions at each
+4. **Work the process.** As the human, you hold the Human role: agree to each plan before the work runs, answer the three questions at each
    full Plan, close open decisions, and perform every merge. Your coding agent holds the Agent role: it plans, builds, gathers the
    evidence, and proposes merges — nothing lands without you.
 
 When a new version ships here, updating is replacing one file.
 
-## Built with it
+## Who is using it
 
 Each generation of this agreement steered a real project, and each project sharpened the agreement:
 
@@ -60,25 +66,17 @@ Each generation of this agreement steered a real project, and each project sharp
 - [blas.wasm](https://github.com/andy-emerson/blas.wasm) — SIMD-tuned BLAS for WebAssembly, bit-identical with zero dependencies
 - [lua.wasm](https://github.com/andy-emerson/lua-wasi) — Lua for the WASM sandbox, interpreter and AOT
 
-...and more.
-
-## In this repository
-
-The agreement governs its own development. The deliverable is [`AGENTS.md`](AGENTS.md) itself; there is no code, so passes here are doc
-passes and the documentation review carries the weight. Open work — todos, bugs, open decisions — lives in GitHub issues; milestones carry
-the roadmap. The maintainer holds the Human role; contributors and coding agents hold the Agent role: propose by pull request, and only the
-maintainer merges.
+All the author's own projects so far — adoption by teams that don't share a brain with the author is the open experiment.
 
 ## Versioning
 
-Semantic versioning on the file itself — any change bumps it, so a deployed copy can be compared to a release by hash. Current: **v2.0.0**.
-The 2.0.0 bump renames the agreement's vocabulary — the architect and engineer became the Human and the Agent, and the process phases became
-Plan → Develop → Assess → Review — so a repository updating from 1.x should also update any of the old terms in its own README. Versions
-below 1.12.0 are prehistory: the agreement evolved across eleven repositories before being versioned.
+Semantic versioning on the file itself — any change bumps it, so a deployed copy can be compared to a release by hash. The current version
+is whatever [the latest release](https://github.com/andy-emerson/working-agreement/releases/latest) says; every copy self-identifies in its
+front matter
 
 ## Contributing
 
-Improvements are welcome as pull requests — which is the agreement applied to itself: anyone may play the Agent; only the Human merges.
+Suggestions for improvement are welcome.
 
 ## License
 
