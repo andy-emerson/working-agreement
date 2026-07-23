@@ -48,14 +48,12 @@ sharpened the agreement:
   for WebAssembly, bit-identical by design
 - [lua.wasm](https://github.com/andy-emerson/lua-wasi) — Lua for the WASM
   sandbox, interpreter and AOT
-- [TallyDB](https://github.com/andy-emerson/TallyDB) — an embeddable,
-  SQL-native numeric database (in progress under this agreement now)
 
 ## Versioning
 
 Semantic versioning on the file itself — any change bumps it, so a deployed
-copy can be compared to a release by hash. Current: **v1.13.0**. Versions
-below 1.12.0 are prehistory: the agreement evolved across eleven
+copy can be compared to a release by hash. Current: **v1.12.0**. Versions
+below 1.11.0 are prehistory: the agreement evolved across eleven
 repositories before being versioned.
 
 ## Contributing
