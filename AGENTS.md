@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md working agreement
-version: 2.2.1
+version: 2.3.0
 source: https://github.com/andy-emerson/working-agreement
 copyright: © 2026 Andrew Emerson
 license: CC-BY-4.0
@@ -37,7 +37,7 @@ between. The process runs at two scales:
 - A **short cycle** produces one commit. Its Plan is brief — three
   sentences suffice — but never implicit: the Human agrees to it before
   the work runs. Its Assess and Review are scoped to the diff.
-- A **larger cycle** produces one merge to `main`. It opens with a full
+- A **long cycle** produces one merge to `main`. It opens with a full
   Plan (the three questions below), contains a sequence of short
   cycles, and ends with repo-wide reviews immediately before the merge.
 
@@ -106,9 +106,12 @@ Living status tracks three species of open work, kept visibly distinct:
   the test that would have caught it.
 - An **open decision** — a design fork deliberately left open. It names
   what it gates, and it must be closed before any work would entrench
-  an answer by accident. Only the Human closes it — by argument, or by
-  evidence: two implementations behind one interface and one benchmark.
-  The losing implementation is removed; its numbers stay in the record.
+  an answer by accident. Its option list is a claim like any other: the
+  record states how and when it was gathered, and a survey made at
+  framing is re-checked before the decision closes. Only the Human
+  closes it — by argument, or by evidence: two implementations behind
+  one interface and one benchmark. The losing implementation is
+  removed; its numbers stay in the record.
 
 Decisions made on the spot need no tracking — they become design and
 are recorded in the durable documents, with the rejected alternative
@@ -168,12 +171,23 @@ Work proceeds in **passes**. Each pass is either a **code pass** or a
 **doc pass** — never both. Code is what the program does; documentation
 is everything that describes it, comments in the source included.
 
-Developing surfaces things the plan did not anticipate. Route each one:
-to living status if it neither blocks the milestone nor advances it;
-handle it now if it blocks the milestone or is low-hanging fruit that
-measurably improves it. Re-planning is where several code passes come
-from. A change large enough to affect *what* is built, not just *how*,
-goes back to the Human.
+Developing surfaces things the plan did not anticipate. First test
+whether it is a decision, not a scheduling question: a choice is a
+decision — not routing — when it freezes something that outlives the
+change: a wire or file format, a public interface, user-visible
+semantics, or a stated guarantee. Inheriting a choice from early
+drafts, scaffolding, or examples does not settle it; settled means a
+record exists naming the alternatives that lost, and for a choice that
+trips this test, absence of that record means open. Surface a decision
+the moment it is found — even mid-pass, even when one option seems
+obvious — never route it by schedule.
+
+Route everything else by schedule: to living status if it neither
+blocks the milestone nor advances it; handle it now if it blocks the
+milestone or is low-hanging fruit that measurably improves it.
+Re-planning is where several code passes come from. A change large
+enough to affect *what* is built, not just *how*, goes back to the
+Human.
 
 # Assess
 
