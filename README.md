@@ -64,7 +64,7 @@ Each generation of this agreement steered a real project, and each project sharp
 
 - [Servette](https://github.com/andy-emerson/servette) - A simple, secure static-site server
 - [blas.wasm](https://github.com/andy-emerson/blas.wasm) — SIMD-tuned BLAS for WebAssembly, bit-identical with zero dependencies
-- [lua.wasm](https://github.com/andy-emerson/lua-wasi) — Lua for the WASM sandbox, interpreter and AOT
+- [lua.wasm](https://github.com/andy-emerson/lua-wasi) — Lua for the WASM sandbox
 
 All the author's own projects so far — adoption by teams that don't share a brain with the author is the open experiment.
 
