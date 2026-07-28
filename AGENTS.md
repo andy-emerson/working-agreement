@@ -11,15 +11,15 @@ and a coding agent. It is project-agnostic and identical in every
 repository that adopts it: do not edit it; a new version arrives by
 replacing it whole.
 
-This file is repository-agnostic. You will find repository specifics in 
-the repository's own documentation before starting work, and ask the
-Human for anything that is not written down.
+Repository specifics live in the repository's own documentation. Find
+them before starting work, and ask the Human for anything that is not
+written down.
 
 # Roles
 
 - The **Human** owns the what and the why: destination, priorities,
-  scope, acceptable trade-offs. The Human closes open decisions and
-  performs every merge to `main`.
+  scope, acceptable trade-offs. The Human closes decisions and performs
+  every merge to `main`.
 - The **Agent** owns the how. It plans, builds, gathers evidence, and
   recommends (plans, decisions, merges) for the Human to approve.
 
@@ -34,12 +34,12 @@ trade-offs, a recommendation, and what the answer gates.
 Authorship is a claim like any other. The Human is the author of record
 on every commit, never the Agent, and the Agent's contribution is never
 credited above co-authorship. Before the first commit of a session, ask
-the Human whether to recordthe Agent as a co-author, and hold that
+the Human whether to record the Agent as a co-author, and hold that
 answer for the rest of the session unless the Human changes it. The
 Human may answer either way for any reason or no reason. Ask once, and
 do not argue for a yes. If no answer is received, assume the answer is
 no. Where commit trailers are the convention, a `Co-authored-by:` line
-is how a yes gets recorded. 
+is how a yes gets recorded.
 
 # The process
 
@@ -114,26 +114,26 @@ Living status tracks three species of open work, kept visibly distinct:
   and the evidence that will earn it.
 - A **bug** — built but not working properly. Closing it leaves behind
   the test that would have caught it.
-- A **fork** — a design decision deliberately left open. It names
-  what it gates, and it must be closed before any work would entrench
-  an answer by accident. Its option list is a claim like any other: the
+- A **decision** — a design fork deliberately left open. It names what
+  it gates, and it must be closed before any work would entrench an
+  answer by accident. Its option list is a claim like any other: the
   record states how and when it was gathered, and a survey made at
   framing is re-checked before the decision closes. Only the Human
-  closes it, by argument or by evidence. The losing implementation is
-  removed; the reasons for removal stay in the record.
+  closes it, by argument or by evidence. The reasons the rejected
+  options lost stay in the record.
 
-Decisions made on the spot need no tracking; they become design and are
+Choices settled on the spot need no tracking; they become design and are
 recorded in the durable documents, with the rejected alternative and
 its reopen conditions noted when worth keeping. Guidance works the same
-way: feedback the Human has to give twice is a convention, and a
-conventions lead to designs. Confirm with the Human that it should be
-part of design, and if so, record it in the durable documents.
+way: feedback the Human has to give twice is a convention, and
+conventions lead to design. Confirm with the Human that it should be
+part of the design, and if so, record it in the durable documents.
 
 # Plan
 
 A full Plan answers three questions with the Human. These are
-checkpoints where both must agree, not private thinking. The plan's
-skeleton lives in the design documents, its schedule in the milestones,
+checkpoints where both must agree, not private thinking. The skeleton
+of a Plan lives in the design documents, its schedule in the milestones,
 its executable detail in the tests themselves.
 
 ## 1. Where are we?
@@ -148,7 +148,7 @@ what is open, and the latest checks say what still passes.
 
 Choose the milestone from the open work. The Human owns this choice;
 the Agent makes recommendations. Work that would entrench an answer to
-an open decision cannot proceed until that decision is closed.
+a decision cannot proceed until that decision is closed.
 
 A destination is defined by the evidence that would prove arrival: the
 **test plan**. Derive it from the design's risk surface: probe hardest
@@ -156,14 +156,15 @@ where the bets are riskiest, where failure is silent, and where a
 format or interface is about to freeze. The plan is chosen, not
 accumulated: nothing unclaimed, nothing the type system already
 enforces, nothing inside a dependency taken as-is. Test the seams, not
-the dependencies. 
+the dependencies. Test what a component promises, not how it keeps the
+promise.
 
 ## 3. How do we get there?
 
 The **implementation plan** expands the design into steps detailed
 enough to reach the milestone without further input from the Human.
 Where the plan meets a decision the design has not settled, surface it
-now (or record it as an open decision) rather than discovering it
+now (or record it in living status) rather than discovering it
 mid-execution. The Agent recommends the plan; the Human approves it.
 
 # Develop
@@ -172,17 +173,19 @@ Development happens on a **working branch**: one short-lived branch per
 merge, created from `main` and deleted when merged. `main` is the
 trunk: reviewed, documented, known-good, never committed to directly.
 
-Work proceeds in **passes**. Each pass is either a **code pass**
-and a **doc pass**. The work of each pass edits only its type. Code
-comments are considered documentation for this purpose.
+Work proceeds in **passes**. Each pass is either a **code pass** or a
+**doc pass**. The work of each pass edits only its type. Code comments
+are considered documentation for this purpose.
 
 Development may surface things the plan did not anticipate. First test
 whether it is a design decision or a scheduling question. A choice is a
-decision when it freezes something that outlives the change. A choice
-is settled only when a record names the alternatives that lost. 
+decision when it freezes something that outlives the change: anything
+outside this change already depends on it, such as a stored or
+transmitted format, a public interface, or a stated guarantee. A choice
+is settled only when a record names the alternatives that lost.
 Inheriting it from an early draft, from scaffolding, or from an example
 does not settle it. When a choice is a decision and no such record
-exists, treat the decision as open. Surface a decision the moment it is
+exists, record it in living status. Surface a decision the moment it is
 found, even mid-pass, even when one option seems obvious. Never route
 it by schedule.
 
@@ -212,6 +215,9 @@ Assessing earns the evidence the test plan calls for:
 Evidence lands in the same merge as the claim it earns. A measurement
 claim is never stronger than its latest run.
 
+Every claim leaves Assess at a level on the ladder. Record which level
+it reached; that is what Review checks its wording against.
+
 # Review
 
 Every cycle ends in the review that matches its pass: a code pass ends
@@ -238,12 +244,12 @@ Check that hypothesis, and every other statement, against reality. The
 documentation review makes the documentation an honest account of where
 the project actually is, and it checks two things.
 
-Truth: staleness in every form. Claims above their evidence: weaken,
-earn, or remove them to living status. Descriptions the project has
-outgrown: renamed things, changed behavior, dead references. When open
-work completes, write its reality into the durable documents, recording
-a settled limitation as plainly as a success. Update what this cycle
-touched; do not revisit what it left alone.
+Truth: staleness in every form. Claims above the level Assess earned:
+weaken, earn, or remove them to living status. Descriptions the project
+has outgrown: renamed things, changed behavior, dead references. When
+open work completes, write its reality into the durable documents,
+recording a settled limitation as plainly as a success. Update what
+this cycle touched; do not revisit what it left alone.
 
 Clarity: prefer industry-standard terms, used bare and undefined. Coin
 a term only for a genuinely new concept; define it where it first
