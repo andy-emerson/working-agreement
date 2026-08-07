@@ -1,6 +1,6 @@
 ---
 title: AGENTS.md working agreement
-version: 3.1.0
+version: 3.0.0
 source: https://github.com/andy-emerson/working-agreement
 copyright: © 2026 Andrew Emerson
 license: CC-BY-4.0
